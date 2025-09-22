@@ -2,6 +2,8 @@ import "./App.css";
 import Card from "./components/Card.jsx";
 import TouristPlaceJson from "./components/TouristPlaceJson.jsx";
 import TouristPlace from "./components/TouristPlace.jsx";
+import UsersJson from "./components/usersJson.jsx";
+import Users from "./components/users.jsx";
 function App() {
   const items = [
     {
@@ -52,13 +54,23 @@ function App() {
 
   return (
     <>
-      {/* <div className="flex gap-10 p-2 my-2">
-        {items.map((item) => (
-          <Card items={item} />
-        ))}
-      </div> */}
+      {/* <div className="p-3">
+        <h2 className="font-bold text-2xl my-2 text-center ">
+          Select your food
+        </h2>
+        <div className="flex gap-10 p-2 my-2">
+          {items.map((item) => (
+            <Card items={item} />
+          ))}
+        </div>
+      </div>
+      <hr></hr>
       <div className="p-2 my-2">
         <TouristPlace places={TouristPlaceJson} />
+      </div> 
+      <hr></hr>*/}
+      <div className="p-2 my-2">
+        <Users users={UsersJson} />;
       </div>
     </>
   );
