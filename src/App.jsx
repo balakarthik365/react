@@ -4,6 +4,12 @@ import TouristPlaceJson from "./components/TouristPlaceJson.jsx";
 import TouristPlace from "./components/TouristPlace.jsx";
 import UsersJson from "./components/usersJson.jsx";
 import Users from "./components/users.jsx";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import UserDetails from "./components/UserDetails.jsx";
+import Details from "./pages/Details.jsx";
+import Home from "./pages/Home.jsx";
+import SearchMovies from "./components/SearchMovies.jsx";
 function App() {
   const items = [
     {
@@ -54,23 +60,34 @@ function App() {
 
   return (
     <>
-      {/* <div className="p-3">
-        <h2 className="font-bold text-2xl my-2 text-center ">
-          Select your food
-        </h2>
-        <div className="flex gap-10 p-2 my-2">
-          {items.map((item) => (
-            <Card items={item} />
-          ))}
-        </div>
-      </div>
-      <hr></hr>
-      <div className="p-2 my-2">
-        <TouristPlace places={TouristPlaceJson} />
-      </div> 
-      <hr></hr>*/}
-      <div className="p-2 my-2">
-        <Users users={UsersJson} />;
+      <div className="container ">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:slug" element={<Details />} />
+          <Route path="/searchMovies/" element={<SearchMovies />} />
+          {/* <Route
+            path="/food"
+            element={
+              <div className="p-3">
+                <h2 className="font-bold text-2xl my-2 text-center">
+                  Select your food
+                </h2>
+                <div className="flex gap-10 p-2 my-3">
+                  {items.map((item) => (
+                    <Card items={item} />
+                  ))}
+                </div>
+              </div>
+            }
+          />
+          <Route
+            path="/places"
+            element={<TouristPlace places={TouristPlaceJson} />}
+          />
+          <Route path="/" element={<Users users={UsersJson} />}></Route>
+          <Route path="/users/:uId" element={<UserDetails />} /> */}
+        </Routes>
       </div>
     </>
   );

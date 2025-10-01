@@ -4,7 +4,7 @@ function TouristPlace({ places }) {
       <div className="text-center p-3">
         <h2 className="font-bold text-2xl my-2">Tourist Places</h2>
       </div>
-      <div className="flex gap-8 my-3 ">
+      <div className="flex gap-8 my-3">
         {places.map((place) => (
           <div
             key={place.id}

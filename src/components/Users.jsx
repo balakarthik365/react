@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 function Users({ users }) {
   const [user, setUser] = useState(users);
   const [activeUserId, setActiveUserId] = useState(null);
@@ -13,7 +14,7 @@ function Users({ users }) {
 
   return (
     <>
-      <div className="container relative">
+      <div className="relative">
         {user.map((user) => {
           function followRequestHandler() {
             setUser((prev) =>
@@ -34,7 +35,7 @@ function Users({ users }) {
           return (
             <div
               key={user.id}
-              className="w-[450px] p-3 mx-auto border border-neutral-400 my-3"
+              className="w-[450px] p-3 mx-auto border border-neutral-400 my-3 hover:cursor-pointer"
             >
               <div className="flex items-center justify-between">
                 <div className="flex gap-3 items-center">
@@ -43,11 +44,16 @@ function Users({ users }) {
                     alt={user.name}
                     className="w-20 h-20 rounded-full object-fill border border-neutral-400"
                   />
-                  <div className=" font-bold">
-                    <h1 className="text-xl ">{user.name}</h1>
-                    <p className="text-sm text-neutral-600">@{user.username}</p>
-                    <p className="text-sm mt-2">{user.profession}</p>
-                  </div>
+
+                  <Link to={`/users/${user.id}`} state={user}>
+                    <div className=" font-bold hover:text-blue-700">
+                      <h1 className="text-xl ">{user.name}</h1>
+                      <p className="text-sm text-neutral-600 hover:text-blue-700">
+                        @{user.username}
+                      </p>
+                      <p className="text-sm mt-2">{user.profession}</p>
+                    </div>
+                  </Link>
                 </div>
                 {user.requestSent ? (
                   <button
@@ -67,12 +73,12 @@ function Users({ users }) {
               </div>
               {/* Show the message only for the active user */}
               {activeUserId === user.id && user.requestSent && (
-                <div className="fixed top-5 right-5 px-6 py-3 border border-green-700 bg-green-500 text-white inline-block rounded-lg font-bold shadow-md shadow-green-700">
+                <div className="fixed bottom-5 right-5 px-6 py-3 border border-green-700 bg-green-500 text-white inline-block rounded-lg font-bold shadow-md shadow-green-700">
                   Follow request Sent to {user.username}!
                 </div>
               )}
               {activeUserId === user.id && !user.requestSent && (
-                <div className="fixed top-5 right-5 px-6 py-3 border border-orange-700 bg-orange-500 text-white inline-block rounded-lg font-bold shadow-md shadow-orange-700">
+                <div className="fixed bottom-5 right-5 px-6 py-3 border border-orange-700 bg-orange-500 text-white inline-block rounded-lg font-bold shadow-md shadow-orange-700">
                   Unfollowed {user.username}!
                 </div>
               )}
