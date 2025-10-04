@@ -10,6 +10,8 @@ import UserDetails from "./components/UserDetails.jsx";
 import Details from "./pages/Details.jsx";
 import Home from "./pages/Home.jsx";
 import SearchMovies from "./components/SearchMovies.jsx";
+import TodoCards from "./components/TodoCards.jsx";
+import Todos from "./components/Todos.jsx";
 function App() {
   const items = [
     {
@@ -61,9 +63,10 @@ function App() {
   return (
     <>
       <div className="container ">
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Todos />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/details/:slug" element={<Details />} />
           <Route path="/searchMovies/" element={<SearchMovies />} />
           {/* <Route
