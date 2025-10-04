@@ -18,3 +18,8 @@
 // Unmount 🗑️
 // Action: The component is being deleted or removed from the DOM.
 // Corresponding useEffect behavior: Running the cleanup function (returned from the effect) right before the component is destroyed.
+
+//To handle forms in react we can use
+//useRef()
+//controlled components
+//react hook form
