@@ -2,8 +2,8 @@ import "./App.css";
 import Card from "./components/Card.jsx";
 import TouristPlaceJson from "./components/TouristPlaceJson.jsx";
 import TouristPlace from "./components/TouristPlace.jsx";
-import UsersJson from "./components/usersJson.jsx";
-import Users from "./components/users.jsx";
+// import UsersJson from "./components/usersJson.jsx";
+// import Users from "./components/users.jsx";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import UserDetails from "./components/UserDetails.jsx";
@@ -12,6 +12,11 @@ import Home from "./pages/Home.jsx";
 import SearchMovies from "./components/SearchMovies.jsx";
 import TodoCards from "./components/TodoCards.jsx";
 import Todos from "./components/Todos.jsx";
+import Forms from "./components/Forms.jsx";
+import GPTHome from "./components/GPTHome";
+import GPTImg from "./components/GPTImg";
+import { Link } from "react-router-dom";
+import logo from "./assets/GPT/logo.svg";
 function App() {
   const items = [
     {
@@ -64,8 +69,30 @@ function App() {
     <>
       <div className="container ">
         {/* <Navbar /> */}
+        <div className="py-3 px-24 flex justify-between items-center border-b border-green-800 sticky top-0 bg-white">
+          <Link to="/gpt">
+            <img src={logo} alt="GPT logo" className="h-8 w-8 object-cover" />
+          </Link>
+          <div className="flex justify-center gap-4 items-center  font-semibold text-md text-blue-600 ">
+            <Link
+              className="  px-2 py-1 rounded-lg  hover:bg-blue-900 hover:text-white"
+              to="/gpt"
+            >
+              Home
+            </Link>
+            <Link
+              className=" px-2 py-1 rounded-lg  hover:bg-blue-900 hover:text-white"
+              to="/gptImg"
+            >
+              Generate Image
+            </Link>
+          </div>
+        </div>
         <Routes>
-          <Route path="/" element={<Todos />} />
+          <Route path="/gpt" element={<GPTHome />} />
+          <Route path="/gptImg" element={<GPTImg />} />
+          <Route path="/forms" element={<Forms />} />
+          <Route path="/todos" element={<Todos />} />
           <Route path="/home" element={<Home />} />
           <Route path="/details/:slug" element={<Details />} />
           <Route path="/searchMovies/" element={<SearchMovies />} />

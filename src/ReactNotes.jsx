@@ -5,8 +5,8 @@
 //DOM - Document Object Model -> have the structured document with tags. when a change in element happens DOM will get refreshed.
 //Now, React creats a lite weight virtual DOM.which is the replica of actual DOM. Now changes are made in Virtual DOM then compute the differences and then applies the changes to the actual DOM
 //reconciliation - check the VDOM and DOM then changes are compred and then the VDOM adds to DOM.
-// 1. Break the UI into components, 
-// 2. Manage states very effectively, 
+// 1. Break the UI into components,
+// 2. Manage states very effectively,
 // 3. Use Props for component communication
 // 4. Handles all the changes in VDOM (React fiber architecture)
 
@@ -30,8 +30,8 @@
 //useState() - helps to udpate the state of the component. it has a variable and function to update it. let [data, setData] = useState(0);
 //useEffect()
 
-
-
+//Props drilling - to pass props component to component to component
+//ContextApi -
 
 // Notes: React useEffect Hook and Component Lifecycle
 // The useEffect Hook
@@ -58,3 +58,9 @@
 //useRef()
 //controlled components
 //react hook form
+
+// shadcn/UI
+
+
+//API Key to generate GPT
+//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
