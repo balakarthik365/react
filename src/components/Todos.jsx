@@ -58,7 +58,7 @@ const Todos = () => {
         className="container
   "
       >
-        <div className="mt-10 w-[450px] mx-auto">
+        <div className="mt-5 w-[450px] mx-auto">
           <h1 className="text-2xl font-bold text-black">
             Manage your tasks{" "}
             <span className="text-neutral-700">@Balakarthik</span>

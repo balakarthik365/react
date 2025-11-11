@@ -68,8 +68,7 @@ function App() {
   return (
     <>
       <div className="container ">
-        {/* <Navbar /> */}
-        <div className="py-3 px-24 flex justify-between items-center border-b border-green-800 sticky top-0 bg-white">
+        {/* <div className="py-3 px-24 flex justify-between items-center border-b border-green-800 sticky top-0 bg-white">
           <Link to="/gpt">
             <img src={logo} alt="GPT logo" className="h-8 w-8 object-cover" />
           </Link>
@@ -87,7 +86,7 @@ function App() {
               Generate Image
             </Link>
           </div>
-        </div>
+        </div> */}
         <Routes>
           <Route path="/gpt" element={<GPTHome />} />
           <Route path="/gptImg" element={<GPTImg />} />
